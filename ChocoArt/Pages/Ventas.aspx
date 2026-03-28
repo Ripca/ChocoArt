@@ -57,7 +57,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Factura</th>
+                        <th>Correlativo</th>
                         <th>Fecha</th>
                         <th>Cliente</th>
                         <th>Fecha Ingreso</th>
@@ -161,7 +161,7 @@
                         res.data.forEach(v => {
                             html += `<tr>
                                 <td>${v.idVenta}</td>
-                                <td><span class="invoice-badge">${v.serie || 'A'}-${v.noFactura || '0000'}</span></td>
+                                <td><span class="invoice-badge">#${String(v.idVenta).padStart(5, '0')}</span></td>
                                 <td>${v.fechaFactura ? new Date(v.fechaFactura).toLocaleDateString() : 'N/A'}</td>
                                 <td style="font-weight: 600;">${v.cliente || 'Consumidor Final'}</td>
                                 <td style="color: var(--text-muted); font-size: 0.85rem;">${v.fechaingreso}</td>
@@ -324,7 +324,7 @@
                         },
                         success: function(res) {
                             if (res.status === 'success') {
-                                Swal.fire('¡Venta Exitosa!', `Factura generada: ${res.noFactura}`, 'success');
+                                Swal.fire('¡Venta Exitosa!', `Venta registrada: #${String(res.idVenta).padStart(5, '0')}`, 'success');
                                 closeSaleModal();
                                 loadVentas();
                             } else {

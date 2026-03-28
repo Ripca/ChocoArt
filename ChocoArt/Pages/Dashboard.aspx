@@ -106,11 +106,11 @@
                 <p>Visualiza el historial de pedidos y el rendimiento del negocio.</p>
             </a>
 
-            <a href="Reportes.aspx" class="mod-card reveal active">
+           <%-- <a href="Reportes.aspx" class="mod-card reveal active">
                 <span class="mod-icon">📊</span>
                 <h3>Reportes</h3>
                 <p>Genera informes detallados de actividad y financiero.</p>
-            </a>
+            </a>--%>
         </div>
     </main>
 

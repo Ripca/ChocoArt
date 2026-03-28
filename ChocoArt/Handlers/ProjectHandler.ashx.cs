@@ -248,7 +248,7 @@ namespace ChocoArt.Handlers
 
         private void HandleGetVentas(HttpContext context)
         {
-            string query = @"SELECT v.idVenta, v.noFactura, v.serie, v.fechaFactura, 
+            string query = @"SELECT v.idVenta, v.fechaFactura, 
                              CONCAT(c.nombres, ' ', c.apellidos) as cliente, v.fechaingreso 
                              FROM ventas v 
                              LEFT JOIN clientes c ON v.idCliente = c.idCliente";
@@ -270,11 +270,8 @@ namespace ChocoArt.Handlers
                     try
                     {
                         // 1. Insertar Venta Header
-                        string queryVenta = "INSERT INTO ventas (noFactura, serie, fechaFactura, idCliente) VALUES (@no, @serie, @fecha, @idC); SELECT LAST_INSERT_ID();";
-                        int noFactura = new Random().Next(1000, 9999); // Simulación de correlativo
+                        string queryVenta = "INSERT INTO ventas (fechaFactura, idCliente) VALUES (@fecha, @idC); SELECT LAST_INSERT_ID();";
                         MySqlCommand cmdVenta = new MySqlCommand(queryVenta, conn, trans);
-                        cmdVenta.Parameters.AddWithValue("@no", noFactura);
-                        cmdVenta.Parameters.AddWithValue("@serie", "A");
                         cmdVenta.Parameters.AddWithValue("@fecha", DateTime.Now);
                         cmdVenta.Parameters.AddWithValue("@idC", idCliente);
                         
@@ -300,7 +297,7 @@ namespace ChocoArt.Handlers
                         }
 
                         trans.Commit();
-                        context.Response.Write(JsonConvert.SerializeObject(new { status = "success", message = "Venta procesada con éxito", noFactura = noFactura }));
+                        context.Response.Write(JsonConvert.SerializeObject(new { status = "success", message = "Venta procesada con éxito", idVenta = idVenta }));
                     }
                     catch (Exception ex)
                     {
