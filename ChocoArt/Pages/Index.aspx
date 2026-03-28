@@ -1,0 +1,187 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ChocoArt.Pages.Index" ResponseEncoding="utf-8" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChocoArt | Diseños Únicos de Chocofrutas</title>
+    <meta name="description" content="ChocoArt ofrece una experiencia dulce y especial con diseños únicos de frutas con chocolate en Boca del Monte.">
+    <link rel="stylesheet" href="../Content/styles.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div id="sidebar" class="sidebar">
+        <button id="close-sidebar" class="close-btn">&times;</button>
+        <div class="sidebar-content">
+            <img src="../assets/LogoChocoArt.png" alt="ChocoArt Logo" class="sidebar-logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#gallery">Diseños</a></li>
+                    <li><a href="#strategies">Estrategias</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="../assets/LogoChocoArt.png" alt="ChocoArt Logo">
+                </a>
+            </div>
+            <div id="menu-toggle" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal">
+                    <h1>Diseños que <span>Enamoran</span></h1>
+                    <p>Transmitiendo alegría y creatividad a través de la fruta y el chocolate más delicioso.</p>
+                    <div class="hero-btns">
+                        <a href="#gallery" class="btn btn-primary">Ver Diseños</a>
+                        <a href="#about" class="btn btn-outline">Nuestra Misión</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal">
+                    <img src="../assets/1.png" alt="ChocoArt Showcase" class="floating">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Mission, Vision, Objective) -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Nuestra Esencia</h2>
+                    <p>Conoce lo que nos impulsa a crear cada día.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card reveal">
+                        <div class="card-icon">🎯</div>
+                        <h3>Objetivo</h3>
+                        <p>Atraer a los clientes con nuestros diseños para ingresar en el área de Boca del Monte.</p>
+                    </div>
+                    <div class="about-card reveal highlight">
+                        <div class="card-icon">✨</div>
+                        <h3>Misión</h3>
+                        <p>Ofrecer una experiencia dulce y especial transmitiendo alegría y creatividad.</p>
+                    </div>
+                    <div class="about-card reveal">
+                        <div class="card-icon">👁️</div>
+                        <h3>Visión</h3>
+                        <p>Destacar por los diseños y posicionarnos como la primera opción del consumidor en Boca del Monte.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Galería de Arte Frutal</h2>
+                    <p>Cada pieza es una obra de arte comestible.</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal">
+                        <img src="../assets/fresa.jpg" alt="Choco-Fresa Especial">
+                        <div class="gallery-overlay"><span>Fresa Artística</span></div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="../assets/1.png" alt="Diseño ChocoArt 1">
+                        <div class="gallery-overlay"><span>Estrella de Piña</span></div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="../assets/4.png" alt="Diseño ChocoArt 2">
+                        <div class="gallery-overlay"><span>Corazón de Melón</span></div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="../assets/fresa.jpg" alt="Choco-Fresa Diseño">
+                        <div class="gallery-overlay"><span>Dulzura Pura</span></div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="../assets/1.png" alt="Diseño ChocoArt 3">
+                        <div class="gallery-overlay"><span>Innovación</span></div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="../assets/4.png" alt="Diseño ChocoArt 4">
+                        <div class="gallery-overlay"><span>Sabor Premium</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategies Section -->
+        <section id="strategies" class="strategies">
+            <div class="container">
+                <div class="strategies-wrapper reveal">
+                    <div class="strategies-content">
+                        <h2>Nuestras Estrategias</h2>
+                        <ul class="strategy-list">
+                            <li>
+                                <strong>Diseños Únicos:</strong>
+                                <span>Creamos formas sorprendentes con las frutas para llamar la atención de cada cliente.</span>
+                            </li>
+                            <li>
+                                <strong>Alianzas Locales:</strong>
+                                <span>Colaboramos con eventos, tiendas y cafeterías para que más personas nos conozcan.</span>
+                            </li>
+                            <li>
+                                <strong>Variedad de Sabores:</strong>
+                                <span>Incorporamos distintos tipos de chocolate y toppings para todos los gustos.</span>
+                            </li>
+                            <li>
+                                <strong>Empaques Llamativos:</strong>
+                                <span>Usamos envolturas atractivas que resaltan la belleza de nuestro producto.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="strategies-image">
+                        <img src="../assets/4.png" alt="Estrategias de Diseño">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <img src="../assets/LogoChocoArt.png" alt="ChocoArt Logo" class="footer-logo">
+                <p>Boca del Monte, Guatemala</p>
+                <p>Una experiencia dulce y creativa.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#gallery">Diseños</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChocoArt. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../Scripts/script.js"></script>
+</body>
+</html>

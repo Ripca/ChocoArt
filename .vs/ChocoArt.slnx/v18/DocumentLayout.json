@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|c:\\users\\vela\\desktop\\semestre4\\emprendedores\\chocoart\\chocoart\\chocoart\\handlers\\projecthandler.ashx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\handlers\\projecthandler.ashx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|c:\\users\\vela\\desktop\\semestre4\\emprendedores\\chocoart\\chocoart\\chocoart\\pages\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\pages\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|c:\\users\\vela\\desktop\\semestre4\\emprendedores\\chocoart\\chocoart\\chocoart\\pages\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\pages\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\chocoart\\pages\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\pages\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\chocoart\\controllers\\chocoarthandler.ashx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\controllers\\chocoarthandler.ashx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\chocoart\\scripts\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\scripts\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Login.aspx",
+              "RelativeDocumentMoniker": "ChocoArt\\Pages\\Login.aspx",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Login.aspx",
+              "RelativeToolTip": "ChocoArt\\Pages\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-28T03:30:14.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Dashboard.aspx",
+              "RelativeDocumentMoniker": "ChocoArt\\Pages\\Dashboard.aspx",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Dashboard.aspx",
+              "RelativeToolTip": "ChocoArt\\Pages\\Dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-28T03:30:06.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.aspx",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Index.aspx",
+              "RelativeDocumentMoniker": "ChocoArt\\Pages\\Index.aspx",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Index.aspx",
+              "RelativeToolTip": "ChocoArt\\Pages\\Index.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-27T05:21:37.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectHandler.ashx.cs",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Handlers\\ProjectHandler.ashx.cs",
+              "RelativeDocumentMoniker": "ChocoArt\\Handlers\\ProjectHandler.ashx.cs",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Handlers\\ProjectHandler.ashx.cs",
+              "RelativeToolTip": "ChocoArt\\Handlers\\ProjectHandler.ashx.cs",
+              "ViewState": "AgIAAAIBAAAAAAAAAIA6wAcBAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T05:46:28.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChocoArtHandler.ashx.cs",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Controllers\\ChocoArtHandler.ashx.cs",
+              "RelativeDocumentMoniker": "ChocoArt\\Controllers\\ChocoArtHandler.ashx.cs",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Controllers\\ChocoArtHandler.ashx.cs",
+              "RelativeToolTip": "ChocoArt\\Controllers\\ChocoArtHandler.ashx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T05:30:44.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Scripts\\script.js",
+              "RelativeDocumentMoniker": "ChocoArt\\Scripts\\script.js",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Scripts\\script.js",
+              "RelativeToolTip": "ChocoArt\\Scripts\\script.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-27T05:19:58.311Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
