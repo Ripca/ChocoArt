@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChocoArt | Registro de Ventas</title>
     <link rel="stylesheet" href="../Content/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
         .admin-body { background: var(--bg-light); min-height: 100vh; padding-top: 100px; }
         .data-card { background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow); margin-top: 2rem; }
@@ -79,7 +80,12 @@
             <div class="form-row">
                 <div class="form-group" style="flex: 2;">
                     <label>Seleccionar Cliente</label>
-                    <select id="selCliente" class="form-control"></select>
+                    <div style="display: flex; gap: 0.5rem; align-items: center; width: 100%;">
+                        <div style="flex-grow: 1;">
+                            <select id="selCliente" class="form-control" style="width: 100%;"></select>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openNewClientModal()" style="padding: 0.6rem 1rem; white-space: nowrap; height: 100%;">+ Nuevo</button>
+                    </div>
                 </div>
             </div>
 
@@ -141,6 +147,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let saleItems = [];
@@ -186,7 +193,7 @@
             $('#saleModal').fadeOut();
         }
 
-        function loadFormData() {
+        function loadFormData(selectedNit = null) {
             // Load Customers
             $.ajax({
                 url: '../Handlers/ProjectHandler.ashx',
@@ -194,10 +201,25 @@
                 success: function(res) {
                     if (res.status === 'success') {
                         let html = '<option value="">-- Seleccionar Cliente --</option>';
+                        let autoSelectId = null;
                         res.data.forEach(c => {
                             html += `<option value="${c.idCliente}">${c.nombres} ${c.apellidos} (NIT: ${c.NIT || 'C/F'})</option>`;
+                            if (selectedNit && c.NIT === selectedNit) {
+                                autoSelectId = c.idCliente;
+                            }
                         });
                         $('#selCliente').html(html);
+
+                        // Inicializar o actualizar Select2
+                        $('#selCliente').select2({
+                            dropdownParent: $('#saleModal'),
+                            width: 'resolve'
+                        });
+
+                        // Si se acaba de guardar uno nuevo, seleccionarlo
+                        if (autoSelectId) {
+                            $('#selCliente').val(autoSelectId).trigger('change');
+                        }
                     }
                 }
             });
@@ -327,6 +349,69 @@
                                 Swal.fire('¡Venta Exitosa!', `Venta registrada: #${String(res.idVenta).padStart(5, '0')}`, 'success');
                                 closeSaleModal();
                                 loadVentas();
+                            } else {
+                                Swal.fire('Error', res.message, 'error');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        function openNewClientModal() {
+            Swal.fire({
+                title: 'Nuevo Cliente',
+                html: `
+                    <input id="swal-nombres" class="swal2-input" placeholder="Nombres" required style="width: 80%;">
+                    <input id="swal-apellidos" class="swal2-input" placeholder="Apellidos" required style="width: 80%;">
+                    <input id="swal-nit" class="swal2-input" placeholder="NIT (o poner C/F)" required style="width: 80%;">
+                    <input id="swal-telefono" class="swal2-input" placeholder="Teléfono" style="width: 80%;">
+                    <select id="swal-genero" class="swal2-input" style="width: 80%; height: 50px;">
+                        <option value="1" disabled selected>Seleccione Género</option>
+                        <option value="1">Masculino</option>
+                        <option value="0">Femenino</option>
+                    </select>
+                `,
+                focusConfirm: false,
+                showCancelButton: true,
+                confirmButtonText: 'Guardar',
+                cancelButtonText: 'Cancelar',
+                preConfirm: () => {
+                    const nombres = document.getElementById('swal-nombres').value;
+                    const apellidos = document.getElementById('swal-apellidos').value;
+                    const nit = document.getElementById('swal-nit').value || 'C/F';
+                    const telefono = document.getElementById('swal-telefono').value;
+                    const genero = document.getElementById('swal-genero').value;
+                    
+                    if (!nombres || !apellidos) {
+                        Swal.showValidationMessage('Nombres y apellidos son obligatorios');
+                        return false;
+                    }
+                    if (genero === "1" && document.getElementById('swal-genero').selectedIndex === 0) {
+                        Swal.showValidationMessage('Debes seleccionar un género');
+                        return false;
+                    }
+                    return { nombres, apellidos, nit, genero, telefono };
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const data = result.value;
+                    $.ajax({
+                        url: '../Handlers/ProjectHandler.ashx',
+                        type: 'POST',
+                        data: {
+                            cmd: 'saveCliente',
+                            idCliente: 0,
+                            nombres: data.nombres,
+                            apellidos: data.apellidos,
+                            nit: data.nit,
+                            genero: data.genero,
+                            telefono: data.telefono
+                        },
+                        success: function(res) {
+                            if (res.status === 'success') {
+                                Swal.fire('¡Cliente Guardado!', 'El cliente ha sido registrado y seleccionado.', 'success');
+                                loadFormData(data.nit); // Reload and select using NIT
                             } else {
                                 Swal.fire('Error', res.message, 'error');
                             }
