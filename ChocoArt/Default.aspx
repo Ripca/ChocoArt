@@ -119,19 +119,16 @@
                 </div>
                 <div class="about-grid">
                     <div class="about-card reveal">
-                        <div class="card-icon">🎯</div>
                         <h3>Objetivo</h3>
-                        <p>Atraer a los clientes con nuestros diseños para ingresar en el área de Boca del Monte.</p>
+                        <p>Atraer a los clientes con nuestros diseños para ingresar en el mercado de Boca del Monte.</p>
                     </div>
                     <div class="about-card reveal highlight">
-                        <div class="card-icon">✨</div>
                         <h3>Misión</h3>
                         <p>Ofrecer una experiencia dulce y especial transmitiendo alegría y creatividad.</p>
                     </div>
                     <div class="about-card reveal">
-                        <div class="card-icon">👁️</div>
                         <h3>Visión</h3>
-                        <p>Destacar por los diseños y posicionarnos como la primera opción del consumidor en Boca del Monte.</p>
+                        <p>Destacar por nuestros diseños y posicionarnos como la primera opción del consumidor en Boca del Monte.</p>
                     </div>
                 </div>
             </div>
@@ -147,11 +144,11 @@
                 <div class="gallery-grid">
                     <div class="gallery-item reveal">
                         <img src="assets/CorazonDeMelon.png" alt="Corazon de Melon">
-                        <div class="gallery-overlay"><span>Corazon de Melon</span></div>
+                        <div class="gallery-overlay"><span>Corazón de Melón</span></div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="assets/EstrellaDePina.JPG" alt="Estrella de Pina">
-                        <div class="gallery-overlay"><span>Estrella de Pina</span></div>
+                        <div class="gallery-overlay"><span>Estrella de Piña</span></div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="assets/Fresa.png" alt="Fresa con Chocolate">
@@ -159,15 +156,15 @@
                     </div>
                     <div class="gallery-item reveal">
                         <img src="assets/ChocoPinaPino.png" alt="Choco Pina con Toppings">
-                        <div class="gallery-overlay"><span>Choco Pina</span></div>
+                        <div class="gallery-overlay"><span>Choco Piña Pino</span></div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="assets/Topings.png" alt="Chocolate con Toppings">
-                        <div class="gallery-overlay"><span>Toppings</span></div>
+                        <div class="gallery-overlay"><span>Toppings variados</span></div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="assets/Chocolate.png" alt="Chocolate">
-                        <div class="gallery-overlay"><span>Chocolate</span></div>
+                        <div class="gallery-overlay"><span>Delicioso Chocolate</span></div>
                     </div>
                 </div>
             </div>

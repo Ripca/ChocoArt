@@ -68,6 +68,17 @@
             padding: 0.8rem 1.5rem;
             font-size: 0.9rem;
         }
+        @media (max-width: 768px) {
+            .dashboard-container { padding-top: 90px; }
+            .dashboard-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem; }
+            .mod-card { padding: 1.5rem; }
+            .mod-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+            .welcome-section { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .user-info { flex-wrap: wrap; gap: 0.5rem !important; }
+        }
+        @media (max-width: 480px) {
+            .dashboard-grid { grid-template-columns: 1fr !important; }
+        }
     </style>
 </head>
 <body class="dashboard-body">

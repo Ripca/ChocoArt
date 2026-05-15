@@ -23,9 +23,30 @@
         .action-btn:hover { transform: scale(1.2); }
         
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); overflow-y: auto; }
-        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: 500px; box-shadow: var(--shadow); position: relative; }
+        .modal-content { background: white; margin: 1rem auto; padding: 2rem; border-radius: 25px; width: min(500px, 95%); box-shadow: var(--shadow); position: relative; }
         .modal-header { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; color: var(--primary); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .admin-body { padding-top: 75px; }
+            .container { padding: 0 0.8rem; }
+            .data-card { padding: 0.8rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table { font-size: 0.8rem; min-width: 500px; }
+            th, td { padding: 0.6rem 0.5rem; }
+            .table-controls { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+            .table-controls .btn { width: 100%; text-align: center; padding: 0.8rem 1rem; font-size: 0.95rem; }
+            .modal-content { 
+                width: 95% !important; 
+                margin: 0.5rem auto !important; 
+                padding: 1.2rem !important; 
+                max-height: 90vh; 
+                overflow-y: auto; 
+            }
+            .form-grid { grid-template-columns: 1fr; }
+            .reveal h1 { font-size: 1.6rem; }
+            .header-container { padding: 0 0.5rem; }
+        }
     </style>
 </head>
 <body class="admin-body">

@@ -24,13 +24,37 @@
         
         /* Modal Styles */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); overflow-y: auto; }
-        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: 500px; box-shadow: var(--shadow); position: relative; }
+        .modal-content { background: white; margin: 1rem auto; padding: 2rem; border-radius: 25px; width: min(500px, 95%); box-shadow: var(--shadow); position: relative; }
         .modal-header { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; color: var(--primary); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .recipe-section { margin-top: 1.5rem; border-top: 2px solid #eee; padding-top: 1rem; }
         .recipe-table { font-size: 0.9rem; margin-top: 0.5rem; }
         .recipe-table th, .recipe-table td { padding: 0.5rem; }
         .recipe-controls { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .admin-body { padding-top: 75px; }
+            .container { padding: 0 0.8rem; }
+            .data-card { padding: 0.8rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table { font-size: 0.8rem; min-width: 350px; }
+            th, td { padding: 0.6rem 0.5rem; }
+            .table-controls { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+            .table-controls .btn { width: 100%; text-align: center; padding: 0.8rem 1rem; font-size: 0.95rem; }
+            .modal-content { 
+                width: 95% !important; 
+                margin: 0.5rem auto !important; 
+                padding: 1.2rem !important; 
+                max-height: 90vh; 
+                overflow-y: auto; 
+            }
+            .form-grid { grid-template-columns: 1fr; }
+            .recipe-controls { flex-wrap: wrap; }
+            .recipe-controls select, .recipe-controls input { flex: 1 1 100%; }
+            .recipe-controls .btn { width: 100%; }
+            .reveal h1 { font-size: 1.6rem; }
+            .header-container { padding: 0 0.5rem; }
+        }
     </style>
 </head>
 <body class="admin-body">
@@ -188,7 +212,7 @@
             $('#modalTitle').text('Nuevo Producto');
             
             // Re-centrar modal si es necesario
-            $('.modal-content').css('margin', '2% auto').css('width', '600px');
+            // Modal se adapta automáticamente vía CSS min()
             
             $('#productModal').fadeIn();
         }
@@ -205,7 +229,7 @@
             $('#txtVenta').val(p.precio_venta);
             $('#modalTitle').text('Editar Producto');
             
-            $('.modal-content').css('margin', '2% auto').css('width', '600px');
+            // Modal se adapta automáticamente vía CSS min()
             
             // Cargar Receta
             $('#tblRecipeEditor tbody').empty();

@@ -41,7 +41,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'admin','admin',_binary '','2026-04-02 18:36:53'),(2,'ventas','1234',_binary '','2026-04-02 18:36:53');
+INSERT INTO `usuarios` VALUES (1,'admin','d033e22ae348aeb5660fc2140aec35850c4da997',_binary '','2026-04-02 18:36:53'),(2,'ventas','efd3caec4164d2f623709125339228b926ef1d3c',_binary '','2026-04-02 18:36:53');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-12 23:24:57
+-- Dump completed on 2026-05-14 21:58:29

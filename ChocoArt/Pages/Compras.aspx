@@ -24,6 +24,18 @@
         
         .purchase-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start; }
         .add-item-form { background: #f8f9fa; padding: 1.5rem; border-radius: 15px; border: 1px solid #eee; }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .admin-body { padding-top: 75px; }
+            .container { padding: 0 0.8rem; }
+            .data-card { padding: 0.8rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table { font-size: 0.8rem; min-width: 350px; }
+            th, td { padding: 0.6rem 0.5rem; }
+            .purchase-grid { grid-template-columns: 1fr; }
+            .reveal h1 { font-size: 1.6rem; }
+            .header-container { padding: 0 0.5rem; }
+        }
     </style>
 </head>
 <body class="admin-body">

@@ -33,7 +33,7 @@ CREATE TABLE `productos` (
   `precio_venta` decimal(8,2) DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Chocobanana Clásica','Banano cubierto con chocolate oscuro',NULL,4.10,8.00,'2026-04-02 18:36:53'),(2,'Chocofresa Sensación','Fresa importada cubierta de chocolate oscuro',NULL,3.15,15.00,'2026-04-02 18:36:53'),(3,'Chocobanana Blanca y Maní','Banano con base de chocolate blanco y maní',NULL,6.20,15.00,'2026-04-02 18:36:53'),(4,'Bandeja Surtida Premium 6','Bandeja de regalo con 3 chocobananas y 3 chocofresas decoradas',NULL,25.25,65.00,'2026-04-02 18:36:53'),(5,'ProductoNuevo','asdad',NULL,0.28,12.00,'2026-04-17 22:31:46');
+INSERT INTO `productos` VALUES (1,'CorazonDeMelon Anicillo','Corazon de melon con chocolate y anicillo','assets/CorazonDeMelon.png',2.87,8.00,'2026-05-14 02:41:21'),(2,'CorazonDeMelon Mania','Corazon de melon con chocolate y mania molida','assets/CorazonDeMelon.png',2.87,8.00,'2026-05-14 02:41:21'),(3,'CorazonDeMelon Chococrispis','Corazon de melon con chocolate y chococrispis','assets/CorazonDeMelon.png',2.87,8.00,'2026-05-14 02:41:21'),(4,'EstrellaDePina Anicillo','Estrella de pina con chocolate y anicillo','assets/EstrellaDePina.JPG',2.87,8.00,'2026-05-14 02:41:21'),(5,'EstrellaDePina Mania','Estrella de pina con chocolate y mania molida','assets/EstrellaDePina.JPG',2.87,8.00,'2026-05-14 02:41:21'),(6,'EstrellaDePina Chococrispis','Estrella de pina con chocolate y chococrispis','assets/EstrellaDePina.JPG',2.87,8.00,'2026-05-14 02:41:21'),(7,'Fresa Anicillo','Fresa con chocolate y anicillo','assets/Fresa.png',2.29,8.00,'2026-05-14 02:41:21'),(8,'Fresa Mania','Fresa con chocolate y mania molida','assets/Fresa.png',2.29,8.00,'2026-05-14 02:41:21'),(9,'Fresa Chococrispis','Fresa con chocolate y chococrispis','assets/Fresa.png',2.29,8.00,'2026-05-14 02:41:21'),(10,'ChocoPinaPino Anicillo','Pina con chocolate y anicillo','assets/ChocoPinaPino.png',2.87,8.00,'2026-05-14 02:41:21'),(11,'ChocoPinaPino Mania','Pina con chocolate y mania molida','assets/ChocoPinaPino.png',2.87,8.00,'2026-05-14 02:41:21'),(12,'ChocoPinaPino Chococrispis','Pina con chocolate y chococrispis','assets/ChocoPinaPino.png',2.87,8.00,'2026-05-14 02:41:21'),(13,'PinaAngelito','Pina con angelitos',NULL,3.29,8.00,'2026-05-14 21:13:04');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-12 23:24:57
+-- Dump completed on 2026-05-14 21:58:30

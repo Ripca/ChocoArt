@@ -33,7 +33,7 @@ CREATE TABLE `clientes` (
   `telefono` varchar(25) DEFAULT NULL,
   `fechaingreso` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Consumidor','Final','C/F',_binary '','','2026-04-02 18:36:53'),(2,'Juan Roberto','Pérez','123456789',_binary '','55551234','2026-04-02 18:36:53'),(3,'María Fernanda','García','987654321',_binary '\0','44445678','2026-04-02 18:36:53'),(4,'Carlos','López','564738291',_binary '','33339876','2026-04-02 18:36:53');
+INSERT INTO `clientes` VALUES (1,'Consumidor','Final','C/F',_binary '','','2026-04-02 18:36:53'),(2,'Juan Roberto','Pérez','123456789',_binary '','55551234','2026-04-02 18:36:53'),(3,'María Fernanda','García','987654321',_binary '\0','44445678','2026-04-02 18:36:53'),(4,'Carlos','López','564738291',_binary '','33339876','2026-04-02 18:36:53'),(5,'Ricardo ','Arrecis','308256689',_binary '','','2026-05-14 20:04:41');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-12 23:25:00
+-- Dump completed on 2026-05-14 21:58:30

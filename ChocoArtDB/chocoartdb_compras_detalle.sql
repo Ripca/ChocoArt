@@ -35,7 +35,7 @@ CREATE TABLE `compras_detalle` (
   KEY `idProducto` (`idInsumo`),
   CONSTRAINT `compras_detalle_ibfk_1` FOREIGN KEY (`idCompra`) REFERENCES `compras` (`idCompra`),
   CONSTRAINT `compras_detalle_ibfk_insumo` FOREIGN KEY (`idInsumo`) REFERENCES `insumos` (`idInsumo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,6 @@ CREATE TABLE `compras_detalle` (
 
 LOCK TABLES `compras_detalle` WRITE;
 /*!40000 ALTER TABLE `compras_detalle` DISABLE KEYS */;
-INSERT INTO `compras_detalle` VALUES (1,1,1,50,0.50),(2,1,6,500,0.03);
 /*!40000 ALTER TABLE `compras_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-12 23:24:57
+-- Dump completed on 2026-05-14 21:58:29

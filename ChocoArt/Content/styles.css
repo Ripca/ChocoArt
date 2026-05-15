@@ -370,7 +370,8 @@ header.scrolled .logo img {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Cambiado a contain para que no se corten las fotos de productos */
+    background: #fff; /* Fondo blanco para las imágenes con transparencia */
     transition: transform 0.8s ease;
 }
 
@@ -529,10 +530,42 @@ footer {
 
 @media (max-width: 768px) {
     .hero-container { grid-template-columns: 1fr; text-align: center; }
-    .hero-content p { margin: 0 auto 2.5rem; }
-    .hero-btns { justify-content: center; }
-    .footer-container { grid-template-columns: 1fr; }
-    .section-title h2 { font-size: 2.5rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { margin: 0 auto 2rem; font-size: 1.1rem; }
+    .hero-btns { justify-content: center; flex-wrap: wrap; }
+    .hero-image { max-width: 280px; margin: 0 auto; }
+    .hero { padding-top: 100px; min-height: auto; padding-bottom: 3rem; }
+
+    .section-title h2 { font-size: 2rem; }
+    .section-title p { font-size: 1rem; }
+
+    /* Gallery */
+    .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .gallery-item { height: 200px; border-radius: 12px; background: #fff; }
+    .gallery-item img { padding: 10px; } /* Espacio para que el producto respire */
+
+    /* About */
+    .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-card { padding: 2rem; }
+
+    /* Footer */
+    .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+
+    /* Modales globales — no desborden la pantalla */
+    .modal { overflow-y: auto; }
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item { height: 300px; }
+    .btn { padding: 0.9rem 1.2rem; font-size: 0.9rem; width: 100%; }
+    .hero-btns { flex-direction: column; }
 }
 
 /* Constant Animations for Floating Fruits */
@@ -594,3 +627,151 @@ footer {
     100% { background-position: 0% 50%; }
 }
 
+/* =====================================================
+   RESPONSIVE ADMIN PAGES
+   ===================================================== */
+
+/* --- Wrapper de tabla con scroll horizontal --- */
+/* Envuelve la tabla para que haga scroll en lugar de romper el layout */
+.data-card table,
+.data-card > table {
+    min-width: 500px; /* fuerza scroll antes de que se malformen */
+}
+
+/* El data-card actúa como scroll wrapper */
+.data-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- Modales: nunca más anchos que la pantalla --- */
+/* Todos los modales usan min(NNNpx, 95%) para adaptarse */
+.modal-content {
+    width: min(600px, 95%) !important;
+    margin: 1rem auto !important;
+    box-sizing: border-box;
+}
+
+/* Modales que necesitan más espacio (Ventas) los tienen con min() inline en su página */
+
+@media (max-width: 768px) {
+
+    /* --- Layout general admin --- */
+    .container {
+        padding: 0 0.8rem;
+    }
+
+    .admin-body {
+        padding-top: 80px !important;
+    }
+
+    .data-card {
+        padding: 1rem !important;
+        border-radius: 14px !important;
+    }
+
+    /* --- table-controls apilado --- */
+    .table-controls {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.8rem !important;
+    }
+
+    .table-controls h3 {
+        font-size: 1.1rem;
+    }
+
+    .table-controls .btn {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    /* --- Modales --- */
+    .modal-content {
+        width: 95% !important;
+        margin: 0.5rem auto !important;
+        padding: 1.2rem !important;
+        border-radius: 16px !important;
+    }
+
+    /* --- form-grid colapsa a 1 columna --- */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Recipe grid (Recetas.aspx) --- */
+    .recipe-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Product selector --- */
+    .product-selector {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.8rem !important;
+    }
+
+    .product-selector select,
+    .product-selector h3 {
+        width: 100% !important;
+    }
+
+    /* --- Dashboard stats grid --- */
+    .dashboard-grid,
+    .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* --- Recetas: controles de añadir insumo --- */
+    .recipe-controls {
+        flex-wrap: wrap !important;
+    }
+
+    .recipe-controls select,
+    .recipe-controls input {
+        flex: 1 1 100% !important;
+    }
+
+    .recipe-controls .btn {
+        width: 100% !important;
+    }
+
+    /* --- Encabezado de páginas admin --- */
+    .reveal h1 {
+        font-size: 2rem !important;
+    }
+
+    .reveal p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-grid,
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .btn {
+        padding: 0.9rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Acción buttons más compactos */
+    .action-btn {
+        font-size: 1.1rem !important;
+        margin-right: 0.2rem !important;
+    }
+
+    /* Total section de Ventas */
+    .total-section {
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 1rem !important;
+    }
+}

@@ -24,7 +24,7 @@
         
         /* Modal Styles */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); overflow-y: auto; }
-        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: 850px; box-shadow: var(--shadow); position: relative; }
+        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: min(850px, 95%); box-shadow: var(--shadow); position: relative; }
         .modal-header { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; color: var(--primary); display: flex; justify-content: space-between; align-items: center; }
         
         .form-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-end; }
@@ -35,15 +35,42 @@
         .sale-product-row .btn { margin-top: 2rem; min-height: 58px; }
         .sale-product-row .select2-container { width: 100% !important; }
         .sale-product-row .select2-container .select2-selection--single { height: 58px; border: 1px solid #ddd; border-radius: 10px; display: flex; align-items: center; }
-        .sale-product-row .select2-selection__rendered { line-height: normal !important; padding-left: 0.8rem !important; padding-right: 2rem !important; }
+        .sale-product-row .select2-selection__rendered { line-height: normal !important; padding-left: 0.8rem !important; padding-right: 2rem !important; white-space: normal !important; word-break: break-all !important; }
         .sale-product-row .select2-selection__arrow { height: 58px !important; }
         
-        .sale-table { margin-top: 1rem; max-height: 300px; overflow-y: auto; border: 1px solid #eee; border-radius: 10px; }
-        .total-section { margin-top: 2rem; display: flex; justify-content: flex-end; gap: 3rem; background: #f8f9fa; padding: 1.5rem; border-radius: 15px; }
+        .sale-table { margin-top: 1rem; max-height: 300px; overflow-y: auto; overflow-x: auto; border: 1px solid #eee; border-radius: 10px; }
+        .total-section { margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 15px; }
         .total-box { text-align: right; }
         .total-label { font-size: 0.9rem; color: var(--text-muted); display: block; }
         .total-value { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
         .change-value { font-size: 1.8rem; font-weight: 800; color: #2a9d8f; }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .admin-body { padding-top: 75px; }
+            .container { padding: 0 0.8rem; }
+            .data-card { padding: 0.8rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table { font-size: 0.8rem; min-width: 450px; }
+            th, td { padding: 0.6rem 0.5rem; }
+            .table-controls { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+            .table-controls .btn { width: 100%; text-align: center; padding: 0.8rem 1rem; font-size: 0.95rem; }
+            .modal-content { 
+                width: 95% !important; 
+                margin: 0.5rem auto !important; 
+                padding: 1.2rem !important; 
+                max-height: 90vh; 
+                overflow-y: auto; 
+                overflow-x: hidden;
+            }
+            .form-row { flex-wrap: wrap; }
+            .form-row .form-group { flex: 1 1 100% !important; }
+            .form-row .btn, .sale-product-row .btn { width: 100%; margin-top: 0.5rem; }
+            .total-section { flex-direction: column; align-items: stretch; gap: 1rem; }
+            .total-box { text-align: center; }
+            .total-value, .change-value { font-size: 1.4rem; }
+            .reveal h1 { font-size: 1.6rem; }
+            .header-container { padding: 0 0.5rem; }
+        }
     </style>
 </head>
 <body class="admin-body">

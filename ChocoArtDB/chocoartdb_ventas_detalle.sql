@@ -35,7 +35,7 @@ CREATE TABLE `ventas_detalle` (
   KEY `idProducto` (`idProducto`),
   CONSTRAINT `ventas_detalle_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `ventas` (`idVenta`),
   CONSTRAINT `ventas_detalle_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `ventas_detalle` (
 
 LOCK TABLES `ventas_detalle` WRITE;
 /*!40000 ALTER TABLE `ventas_detalle` DISABLE KEYS */;
-INSERT INTO `ventas_detalle` VALUES (1,1,1,2,8.00),(2,1,2,1,15.00),(3,2,4,1,65.00),(4,3,5,1,12.00),(5,4,2,3,15.00);
+INSERT INTO `ventas_detalle` VALUES (1,1,1,1,8.00),(2,1,7,1,8.00),(3,2,2,10,8.00),(4,3,6,1,8.00),(5,3,8,10,8.00),(7,5,3,1,8.00);
 /*!40000 ALTER TABLE `ventas_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-12 23:24:58
+-- Dump completed on 2026-05-14 21:58:30

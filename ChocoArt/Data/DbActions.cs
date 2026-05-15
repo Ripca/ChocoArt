@@ -53,10 +53,26 @@ namespace ChocoArt.Data
                              WHERE u.usuario = @user AND u.password = @pass AND u.activo = 1 AND ur.estado = 1";
             MySqlParameter[] p = {
                 new MySqlParameter("@user", MySqlDbType.VarChar) { Value = user },
-                new MySqlParameter("@pass", MySqlDbType.VarChar) { Value = password }
+                new MySqlParameter("@pass", MySqlDbType.VarChar) { Value = HashSHA1(password) }
             };
-            
+
             return ExecuteQuery(query, p);
+        }
+
+        /// <summary>
+        /// Convierte texto plano a SHA1 hexadecimal lowercase.
+        /// Equivalente a MySQL's SHA1() — el usuario escribe normal, el sistema lo hashea antes de comparar.
+        /// </summary>
+        private static string HashSHA1(string input)
+        {
+            using (var sha1 = System.Security.Cryptography.SHA1.Create())
+            {
+                byte[] bytes = sha1.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
+                var sb = new System.Text.StringBuilder();
+                foreach (byte b in bytes)
+                    sb.Append(b.ToString("x2")); // lowercase hex, igual que MySQL SHA1()
+                return sb.ToString();
+            }
         }
     }
 }
