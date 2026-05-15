@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChocoArt | Registro de Ventas</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="../Content/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
@@ -19,13 +24,19 @@
         
         /* Modal Styles */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); overflow-y: auto; }
-        .modal-content { background: white; margin: 5% auto; padding: 2.5rem; border-radius: 25px; width: 850px; box-shadow: var(--shadow); }
+        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: 850px; box-shadow: var(--shadow); position: relative; }
         .modal-header { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; color: var(--primary); display: flex; justify-content: space-between; align-items: center; }
         
         .form-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-end; }
         .form-group { flex: 1; }
         .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark); }
         .form-control { width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid #ddd; }
+        .sale-product-row { align-items: flex-start; }
+        .sale-product-row .btn { margin-top: 2rem; min-height: 58px; }
+        .sale-product-row .select2-container { width: 100% !important; }
+        .sale-product-row .select2-container .select2-selection--single { height: 58px; border: 1px solid #ddd; border-radius: 10px; display: flex; align-items: center; }
+        .sale-product-row .select2-selection__rendered { line-height: normal !important; padding-left: 0.8rem !important; padding-right: 2rem !important; }
+        .sale-product-row .select2-selection__arrow { height: 58px !important; }
         
         .sale-table { margin-top: 1rem; max-height: 300px; overflow-y: auto; border: 1px solid #eee; border-radius: 10px; }
         .total-section { margin-top: 2rem; display: flex; justify-content: flex-end; gap: 3rem; background: #f8f9fa; padding: 1.5rem; border-radius: 15px; }
@@ -91,10 +102,10 @@
 
             <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid #eee;">
             
-            <div class="form-row">
+            <div class="form-row sale-product-row">
                 <div class="form-group" style="flex: 2;">
                     <label>Producto</label>
-                    <select id="selProducto" class="form-control" onchange="updateUnitPrice()"></select>
+                    <select id="selProducto" class="form-control" style="width: 100%;" onchange="updateUnitPrice()"></select>
                 </div>
                 <div class="form-group">
                     <label>Precio</label>
@@ -227,15 +238,39 @@
             // Load Products
             $.ajax({
                 url: '../Handlers/ProjectHandler.ashx',
-                data: { cmd: 'getProductos' },
+                data: { cmd: 'getProductosParaVenta' },
                 success: function(res) {
                     if (res.status === 'success') {
-                        allProducts = res.data;
+                        // Calcular el stock real fabricable
+                        allProducts = res.data.map(p => {
+                            p.tieneReceta = parseInt(p.tieneReceta || 0, 10);
+                            p.maxFabricable = parseInt(p.maxFabricable || 0, 10);
+                            p.existencia_base = parseInt(p.existencia_base || 0, 10);
+                            p.stockReal = p.tieneReceta > 0 ? p.maxFabricable : p.existencia_base;
+                            return p;
+                        });
+
                         let html = '<option value="">-- Seleccionar Producto --</option>';
-                        res.data.forEach(p => {
-                            html += `<option value="${p.idProducto}">${p.producto} (Stock: ${p.existencia})</option>`;
+                        allProducts.forEach(p => {
+                            if (p.tieneReceta > 0 && p.stockReal <= 0) {
+                                html += `<option value="${p.idProducto}" disabled style="color: #E63946;">⛔ ${p.producto} (Sin insumos suficientes)</option>`;
+                            } else if (p.tieneReceta === 0) {
+                                html += `<option value="${p.idProducto}">⚠️ ${p.producto} (No tiene receta. Stock config: ${p.stockReal})</option>`;
+                            } else {
+                                html += `<option value="${p.idProducto}">📦 ${p.producto} (Fabricables: ${p.stockReal})</option>`;
+                            }
                         });
                         $('#selProducto').html(html);
+
+                        if ($('#selProducto').hasClass('select2-hidden-accessible')) {
+                            $('#selProducto').select2('destroy');
+                        }
+
+                        $('#selProducto').select2({
+                            dropdownParent: $('#saleModal'),
+                            width: 'resolve',
+                            placeholder: '-- Seleccionar Producto --'
+                        });
                     }
                 }
             });
@@ -261,12 +296,19 @@
             }
 
             const prod = allProducts.find(p => p.idProducto == id);
-            if (cant > prod.existencia) {
-                return Swal.fire('Stock Insuficiente', `Solo hay ${prod.existencia} unidades disponibles`, 'warning');
+            
+            // Revisa vs el carrito actual
+            let currentCartQ = 0;
+            const existing = saleItems.find(i => i.idProducto == id);
+            if (existing) currentCartQ = existing.cantidad;
+
+            if ((cant + currentCartQ) > prod.stockReal) {
+                if(prod.tieneReceta > 0)
+                    return Swal.fire('Insumos Insuficientes', `Restando lo que ya tienes en la canasta, solo tienes inventario de materia prima para ${prod.stockReal} unidades en total de este producto.`, 'warning');
+                else
+                    return Swal.fire('Stock Insuficiente', `Solo hay ${prod.stockReal} unidades disponibles`, 'warning');
             }
 
-            // Check if already in list
-            const existing = saleItems.find(i => i.idProducto == id);
             if (existing) {
                 existing.cantidad += cant;
             } else {
@@ -280,7 +322,7 @@
 
             renderItems();
             // Reset inputs
-            $('#selProducto').val('');
+            $('#selProducto').val('').trigger('change');
             $('#txtPrecio').val('');
             $('#txtCantidad').val('1');
         }

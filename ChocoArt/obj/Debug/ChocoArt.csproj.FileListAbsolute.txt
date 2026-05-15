@@ -1,5 +1,3 @@
-C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.csproj.AssemblyReference.cache
-C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.csproj.CoreCompileInputs.cache
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\ChocoArt.dll.config
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\ChocoArt.dll
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\ChocoArt.pdb
@@ -87,6 +85,8 @@ C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\New
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\Antlr3.Runtime.pdb
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.csproj.AssemblyReference.cache
+C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.csproj.CoreCompileInputs.cache
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.csproj.Up2Date
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.dll
 C:\Users\VELA\Desktop\SEMESTRE4\EMPRENDEDORES\ChocoArt\ChocoArt\ChocoArt\obj\Debug\ChocoArt.pdb

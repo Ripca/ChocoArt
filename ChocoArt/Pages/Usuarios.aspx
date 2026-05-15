@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChocoArt | Gestión de Usuarios</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="../Content/styles.css">
     <style>
         .admin-body { background: var(--bg-light); min-height: 100vh; padding-top: 100px; }
@@ -21,8 +26,8 @@
         .action-btn:hover { transform: scale(1.2); }
         
         /* Modal Styles */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
-        .modal-content { background: white; margin: 10% auto; padding: 2.5rem; border-radius: 25px; width: 400px; box-shadow: var(--shadow); }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); overflow-y: auto; }
+        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: 400px; box-shadow: var(--shadow); position: relative; }
         .modal-header { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; columns: var(--primary); }
     </style>
 </head>
@@ -50,6 +55,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Usuario</th>
+                        <th>Rol</th>
                         <th>Estado</th>
                         <th>Fecha Creación</th>
                         <th>Acciones</th>
@@ -78,6 +84,12 @@
                 <input type="password" id="txtPassword" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid #ddd;">
             </div>
             <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Rol del Sistema</label>
+                <select id="selRol" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid #ddd;">
+                    <!-- Cargado dinámicamente -->
+                </select>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
                 <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Estado</label>
                 <select id="selActivo" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid #ddd;">
                     <option value="1">Activo</option>
@@ -95,8 +107,25 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function() {
+            loadRoles();
             loadUsers();
         });
+
+        function loadRoles() {
+            $.ajax({
+                url: '../Handlers/ProjectHandler.ashx',
+                data: { cmd: 'getRoles' },
+                success: function(res) {
+                    if (res.status === 'success') {
+                        let html = '';
+                        res.data.forEach(r => {
+                            html += `<option value="${r.idRol}">${r.nombre}</option>`;
+                        });
+                        $('#selRol').html(html);
+                    }
+                }
+            });
+        }
 
         function loadUsers() {
             $.ajax({
@@ -109,6 +138,7 @@
                             html += `<tr>
                                 <td>${u.idUsuario}</td>
                                 <td>${u.usuario}</td>
+                                <td><span class="status-badge" style="background:#e9ecef; color:#495057;">${(u.rol || 'Sin Rol').toUpperCase()}</span></td>
                                 <td><span class="status-badge ${u.activo ? 'status-active' : 'status-inactive'}">${u.activo ? 'Activo' : 'Inactivo'}</span></td>
                                 <td>${u.fechaCreacion}</td>
                                 <td>
@@ -127,6 +157,7 @@
             $('#txtIdUsuario').val('0');
             $('#txtUsuario').val('');
             $('#txtPassword').val('');
+            $('#selRol').val($('#selRol option:first').val());
             $('#selActivo').val('1');
             $('#modalTitle').text('Nuevo Usuario');
             $('#userModal').fadeIn();
@@ -140,6 +171,7 @@
             $('#txtIdUsuario').val(u.idUsuario);
             $('#txtUsuario').val(u.usuario);
             $('#txtPassword').val(''); // No mostrar password
+            $('#selRol').val(u.idRol);
             $('#selActivo').val(u.activo ? '1' : '0');
             $('#modalTitle').text('Editar Usuario');
             $('#userModal').fadeIn();
@@ -151,6 +183,7 @@
                 idUsuario: $('#txtIdUsuario').val(),
                 usuario: $('#txtUsuario').val(),
                 password: $('#txtPassword').val(),
+                idRol: $('#selRol').val(),
                 activo: $('#selActivo').val()
             };
             

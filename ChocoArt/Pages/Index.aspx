@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChocoArt | Diseños Únicos de Chocofrutas</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
     <meta name="description" content="ChocoArt ofrece una experiencia dulce y especial con diseños únicos de frutas con chocolate en Boca del Monte.">
     <link rel="stylesheet" href="../Content/styles.css">
 </head>
@@ -21,7 +26,6 @@
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="#about">Nosotros</a></li>
                     <li><a href="#gallery">Diseños</a></li>
-                    <li><a href="#strategies">Estrategias</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -99,60 +103,28 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item reveal">
-                        <img src="../assets/fresa.jpg" alt="Choco-Fresa Especial">
-                        <div class="gallery-overlay"><span>Fresa Artística</span></div>
+                        <img src="../assets/CorazonDeMelon.png" alt="Corazon de Melon">
+                        <div class="gallery-overlay"><span>Corazon de Melon</span></div>
                     </div>
                     <div class="gallery-item reveal">
-                        <img src="../assets/1.png" alt="Diseño ChocoArt 1">
-                        <div class="gallery-overlay"><span>Estrella de Piña</span></div>
+                        <img src="../assets/EstrellaDePina.JPG" alt="Estrella de Pina">
+                        <div class="gallery-overlay"><span>Estrella de Pina</span></div>
                     </div>
                     <div class="gallery-item reveal">
-                        <img src="../assets/4.png" alt="Diseño ChocoArt 2">
-                        <div class="gallery-overlay"><span>Corazón de Melón</span></div>
+                        <img src="../assets/Fresa.png" alt="Fresa con Chocolate">
+                        <div class="gallery-overlay"><span>Fresa Artistica</span></div>
                     </div>
                     <div class="gallery-item reveal">
-                        <img src="../assets/fresa.jpg" alt="Choco-Fresa Diseño">
-                        <div class="gallery-overlay"><span>Dulzura Pura</span></div>
+                        <img src="../assets/ChocoPinaPino.png" alt="Choco Pina con Toppings">
+                        <div class="gallery-overlay"><span>Choco Pina</span></div>
                     </div>
                     <div class="gallery-item reveal">
-                        <img src="../assets/1.png" alt="Diseño ChocoArt 3">
-                        <div class="gallery-overlay"><span>Innovación</span></div>
+                        <img src="../assets/Topings.png" alt="Chocolate con Toppings">
+                        <div class="gallery-overlay"><span>Toppings</span></div>
                     </div>
                     <div class="gallery-item reveal">
-                        <img src="../assets/4.png" alt="Diseño ChocoArt 4">
-                        <div class="gallery-overlay"><span>Sabor Premium</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Strategies Section -->
-        <section id="strategies" class="strategies">
-            <div class="container">
-                <div class="strategies-wrapper reveal">
-                    <div class="strategies-content">
-                        <h2>Nuestras Estrategias</h2>
-                        <ul class="strategy-list">
-                            <li>
-                                <strong>Diseños Únicos:</strong>
-                                <span>Creamos formas sorprendentes con las frutas para llamar la atención de cada cliente.</span>
-                            </li>
-                            <li>
-                                <strong>Alianzas Locales:</strong>
-                                <span>Colaboramos con eventos, tiendas y cafeterías para que más personas nos conozcan.</span>
-                            </li>
-                            <li>
-                                <strong>Variedad de Sabores:</strong>
-                                <span>Incorporamos distintos tipos de chocolate y toppings para todos los gustos.</span>
-                            </li>
-                            <li>
-                                <strong>Empaques Llamativos:</strong>
-                                <span>Usamos envolturas atractivas que resaltan la belleza de nuestro producto.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="strategies-image">
-                        <img src="../assets/4.png" alt="Estrategias de Diseño">
+                        <img src="../assets/Chocolate.png" alt="Chocolate">
+                        <div class="gallery-overlay"><span>Chocolate</span></div>
                     </div>
                 </div>
             </div>

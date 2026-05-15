@@ -35,7 +35,7 @@ CREATE TABLE `ventas_detalle` (
   KEY `idProducto` (`idProducto`),
   CONSTRAINT `ventas_detalle_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `ventas` (`idVenta`),
   CONSTRAINT `ventas_detalle_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `ventas_detalle` (
 
 LOCK TABLES `ventas_detalle` WRITE;
 /*!40000 ALTER TABLE `ventas_detalle` DISABLE KEYS */;
-INSERT INTO `ventas_detalle` VALUES (1,1,1,1,750.00),(2,2,2,1,1200.00),(4,5,2,2,1200.00),(5,6,5,3,10000.00),(6,7,4,1,412.00),(7,8,1,1,750.00),(8,9,5,1,10000.00),(9,10,3,1,600.00),(10,10,2,1,600.00),(11,10,3,6,1200.00),(12,10,2,1,600.00),(13,10,3,6,1200.00),(14,9,1,1,10000.00),(15,9,5,4,750.00),(16,5,4,2,412.00),(17,11,7,1,120.00),(18,12,2,6,1200.00),(19,13,9,2,21.00),(20,14,20,20,33.00),(21,15,26,2,60.00),(26,18,29,1,8.00),(27,18,32,1,9.50),(28,19,30,60,6.50),(29,18,30,4,6.50);
+INSERT INTO `ventas_detalle` VALUES (1,1,1,2,8.00),(2,1,2,1,15.00),(3,2,4,1,65.00),(4,3,5,1,12.00),(5,4,2,3,15.00);
 /*!40000 ALTER TABLE `ventas_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-27 22:34:53
+-- Dump completed on 2026-05-12 23:24:58

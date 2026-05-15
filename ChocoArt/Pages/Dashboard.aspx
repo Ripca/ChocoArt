@@ -6,7 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChocoArt | Dashboard</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="../Content/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .dashboard-body {
             background: var(--bg-light);
@@ -87,35 +93,48 @@
             </div>
         </div>
 
-        <div class="dashboard-grid">
-            <a href="Usuarios.aspx" class="mod-card reveal active">
-                <span class="mod-icon">👥</span>
-                <h3>Usuarios</h3>
-                <p>Gestiona los accesos al sistema, añade o bloquea colaboradores.</p>
-            </a>
-
-            <a href="Productos.aspx" class="mod-card reveal active">
-                <span class="mod-icon">🍓</span>
-                <h3>Productos</h3>
-                <p>Controla el catálogo de diseños, precios y existencias.</p>
-            </a>
-
-            <a href="Ventas.aspx" class="mod-card reveal active">
-                <span class="mod-icon">💰</span>
-                <h3>Ventas</h3>
-                <p>Visualiza el historial de pedidos y el rendimiento del negocio.</p>
-            </a>
-
-           <%-- <a href="Reportes.aspx" class="mod-card reveal active">
-                <span class="mod-icon">📊</span>
-                <h3>Reportes</h3>
-                <p>Genera informes detallados de actividad y financiero.</p>
-            </a>--%>
+        <div id="menu-container" class="dashboard-grid">
+            <!-- Los menús se cargarán dinámicamente aquí -->
         </div>
     </main>
 
     <footer style="background: transparent; padding: 2rem 0; text-align: center; color: var(--text-muted);">
         <p>&copy; 2026 ChocoArt. Sistema de Gestión Interna.</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Cargar Menús Dinámicos
+            $.ajax({
+                url: '../Handlers/ProjectHandler.ashx',
+                data: { cmd: 'getMenus' },
+                success: function(res) {
+                    if(res.status === 'success') {
+                        let menus = res.data;
+                        let html = '';
+                        
+                        menus.forEach(function(m) {
+                            html += `
+                                <a href="${m.url}" class="mod-card reveal active">
+                                    <span class="mod-icon"><i class="${m.icono}"></i></span>
+                                    <h3>${m.nombre}</h3>
+                                    <p>${m.descripcion || ''}</p>
+                                </a>`;
+                        });
+                        
+                        $('#menu-container').html(html);
+                    } else {
+                        console.error('Error al cargar menús:', res.message);
+                        $('#menu-container').html('<p style="color:red; text-align:center; padding:2rem;">Error al cargar el panel: ' + res.message + '</p>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error de red/servidor:', error);
+                    $('#menu-container').html('<p style="color:red; text-align:center; padding:2rem;">Error de comunicación con el servidor.</p>');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

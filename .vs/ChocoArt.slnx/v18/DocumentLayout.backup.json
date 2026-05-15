@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|c:\\users\\vela\\desktop\\semestre4\\emprendedores\\chocoart\\chocoart\\chocoart\\data\\coreconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\data\\coreconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|c:\\users\\vela\\desktop\\semestre4\\emprendedores\\chocoart\\chocoart\\chocoart\\pages\\recetas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\pages\\recetas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\chocoart\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\chocoart\\data\\coreconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|solutionrelative:chocoart\\data\\coreconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C1126B51-BA84-44D4-A740-155C4D96388F}|ChocoArt\\ChocoArt.csproj|C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\chocoart\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -55,28 +55,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CoreConnection.cs",
-              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Data\\CoreConnection.cs",
-              "RelativeDocumentMoniker": "ChocoArt\\Data\\CoreConnection.cs",
-              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Data\\CoreConnection.cs",
-              "RelativeToolTip": "ChocoArt\\Data\\CoreConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAgAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T04:45:32.477Z",
+              "Title": "Recetas.aspx",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Recetas.aspx",
+              "RelativeDocumentMoniker": "ChocoArt\\Pages\\Recetas.aspx",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Pages\\Recetas.aspx",
+              "RelativeToolTip": "ChocoArt\\Pages\\Recetas.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-02T21:00:35.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Web.config",
-              "RelativeDocumentMoniker": "ChocoArt\\Web.config",
-              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Web.config",
-              "RelativeToolTip": "ChocoArt\\Web.config",
-              "ViewState": "AgIAACkAAAAA0LRo1wcfwAsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-03-28T04:45:17.744Z",
-              "EditorCaption": ""
+              "Title": "CoreConnection.cs",
+              "DocumentMoniker": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Data\\CoreConnection.cs",
+              "RelativeDocumentMoniker": "ChocoArt\\Data\\CoreConnection.cs",
+              "ToolTip": "C:\\Users\\VELA\\Desktop\\SEMESTRE4\\EMPRENDEDORES\\ChocoArt\\ChocoArt\\ChocoArt\\Data\\CoreConnection.cs",
+              "RelativeToolTip": "ChocoArt\\Data\\CoreConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T04:45:32.477Z"
             },
             {
               "$type": "Document",

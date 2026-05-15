@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChocoArt | Gestión de Clientes</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="../Content/styles.css">
     <style>
         .admin-body { background: var(--bg-light); min-height: 100vh; padding-top: 100px; }
@@ -17,8 +22,8 @@
         .action-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; margin-right: 0.5rem; transition: var(--transition); }
         .action-btn:hover { transform: scale(1.2); }
         
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
-        .modal-content { background: white; margin: 5% auto; padding: 2.5rem; border-radius: 25px; width: 500px; box-shadow: var(--shadow); }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); overflow-y: auto; }
+        .modal-content { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 25px; width: 500px; box-shadow: var(--shadow); position: relative; }
         .modal-header { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; color: var(--primary); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     </style>

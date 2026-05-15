@@ -54,7 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Floating Fruits System
     const createFloatingFruits = () => {
-        const fruitImages = ['assets/1.png', 'assets/4.png', 'assets/fresa.jpg'];
+        const assetsPath = window.location.pathname.includes('/Pages/') ? '../assets/' : 'assets/';
+        const fruitImages = [
+            'CorazonDeMelon.png',
+            'EstrellaDePina.JPG',
+            'Fresa.png',
+            'ChocoPinaPino.png',
+            'Topings.png',
+            'Chocolate.png'
+        ].map(image => assetsPath + image);
         const container = document.body;
 
         for (let i = 0; i < 8; i++) {

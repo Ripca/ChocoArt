@@ -27,16 +27,14 @@ DROP TABLE IF EXISTS `menus`;
 CREATE TABLE `menus` (
   `id_menu` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(200) DEFAULT NULL COMMENT 'Descripción del menú',
   `icono` varchar(50) NOT NULL COMMENT 'Clase de Font Awesome (ej: fas fa-users)',
   `url` varchar(100) NOT NULL COMMENT 'Ruta relativa (ej: ClienteServlet)',
-  `id_padre` int DEFAULT NULL COMMENT 'ID del menú padre para submenús',
   `orden` int NOT NULL DEFAULT '0' COMMENT 'Orden de visualización',
   `estado` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1=Activo, 0=Inactivo',
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_menu`),
-  KEY `id_padre` (`id_padre`),
-  CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`id_padre`) REFERENCES `menus` (`id_menu`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id_menu`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +43,7 @@ CREATE TABLE `menus` (
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-INSERT INTO `menus` VALUES (1,'Dashboard','fas fa-tachometer-alt','DashboardServlet',NULL,1,1,'2025-10-08 21:54:10'),(2,'Clientes','fas fa-users','ClienteServlet',8,1,1,'2025-10-08 21:54:10'),(3,'Empleados','fas fa-user-tie','EmpleadoServlet',8,2,1,'2025-10-08 21:54:10'),(4,'Puestos','fas fa-briefcase','PuestoServlet',3,1,1,'2025-10-08 21:54:10'),(5,'Productos','fas fa-box','ProductoServlet',NULL,2,1,'2025-10-08 21:54:10'),(6,'Marcas','fas fa-tags','MarcaServlet',5,1,1,'2025-10-08 21:54:10'),(7,'Proveedores','fas fa-truck','ProveedorServlet',9,1,1,'2025-10-08 21:54:10'),(8,'Ventas','fas fa-shopping-cart','VentaServlet',NULL,3,1,'2025-10-08 21:54:10'),(9,'Compras','fas fa-shopping-bag','CompraServlet',NULL,4,1,'2025-10-08 21:54:10'),(14,'Reportes','fas fa-file','reportes',NULL,5,1,'2025-10-23 22:30:57'),(15,'Dashboard','fas fa-home','DashboardServlet',NULL,1,1,'2026-03-20 08:00:00'),(16,'Seguridad','fas fa-shield-alt','#',NULL,2,1,'2026-03-20 08:05:00'),(17,'Ventas','fas fa-cash-register','#',NULL,3,1,'2026-03-20 08:10:00'),(18,'Compras','fas fa-shopping-cart','#',NULL,4,1,'2026-03-20 08:15:00'),(19,'Inventario','fas fa-boxes','#',NULL,5,1,'2026-03-20 08:20:00'),(20,'Reportes','fas fa-chart-bar','#',NULL,6,1,'2026-03-20 08:25:00'),(21,'Usuarios','fas fa-users','UsuarioServlet',2,1,1,'2026-03-20 08:30:00'),(22,'Roles','fas fa-user-tag','RolServlet',2,2,1,'2026-03-20 08:35:00'),(23,'Clientes','fas fa-address-book','ClienteServlet',3,1,1,'2026-03-20 08:40:00'),(24,'Facturación','fas fa-file-invoice-dollar','VentaServlet',3,2,1,'2026-03-20 08:45:00'),(25,'Productos','fas fa-apple-alt','ProductoServlet',5,1,1,'2026-03-20 08:50:00'),(26,'Compras Detalle','fas fa-list','CompraDetalleServlet',4,1,1,'2026-03-20 08:55:00');
+INSERT INTO `menus` VALUES (1,'Usuarios','Control de usuarios, roles y accesos al sistema.','fas fa-users','Usuarios.aspx',1,1,'2026-04-17 22:46:15'),(2,'Productos','Gestión de productos, precios e imágenes.','fas fa-box','Productos.aspx',2,1,'2026-04-17 22:46:15'),(3,'Insumos','Control de insumos, costos y existencias.','fas fa-boxes','Insumos.aspx',3,1,'2026-04-17 22:46:15'),(4,'Recetas','Relación entre productos e insumos necesarios.','fas fa-book','Recetas.aspx',4,1,'2026-04-17 22:46:15'),(5,'Compras','Registro de compras de insumos y actualización de inventario.','fas fa-truck','Compras.aspx',5,1,'2026-04-17 22:46:15'),(6,'Ventas','Registro de ventas, clientes, productos y totales.','fas fa-shopping-cart','Ventas.aspx',6,1,'2026-04-17 22:46:15');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-27 22:34:54
+-- Dump completed on 2026-05-12 23:24:59

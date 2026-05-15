@@ -30,7 +30,7 @@ CREATE TABLE `roles` (
   `estado` tinyint DEFAULT '1',
   `fecha_creacion` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idRol`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'administrador',1,'2025-10-26 12:13:13'),(2,'cajero',1,'2025-10-26 12:13:26'),(3,'vendedor',1,'2025-10-26 12:13:26'),(4,'Administrador',1,'2026-03-20 07:00:00'),(5,'Vendedor',1,'2026-03-20 07:05:00'),(6,'Inventario',1,'2026-03-20 07:10:00'),(7,'Cajero',1,'2026-03-20 07:15:00'),(8,'Supervisor',1,'2026-03-20 07:20:00'),(9,'Auditor',1,'2026-03-20 07:25:00');
+INSERT INTO `roles` VALUES (1,'Administrador',1,'2025-10-26 12:19:37'),(2,'Ventas',1,'2025-10-26 12:19:52'),(3,'Producción',1,'2026-03-21 09:10:00'),(4,'Compras',1,'2026-03-21 09:15:00'),(5,'Bodega',1,'2026-03-21 09:20:00'),(6,'Gerencia',1,'2026-03-21 09:25:00');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-27 22:34:54
+-- Dump completed on 2026-05-12 23:24:56

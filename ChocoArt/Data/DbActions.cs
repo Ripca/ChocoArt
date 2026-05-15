@@ -44,16 +44,19 @@ namespace ChocoArt.Data
         }
 
         // Specific Actions
-        public static bool ValidateLogin(string user, string password)
+        public static DataTable GetLoginUser(string user, string password)
         {
-            string query = "SELECT COUNT(*) FROM usuarios WHERE usuario = @user AND password = @pass AND activo = 1";
+            string query = @"SELECT u.idUsuario, u.usuario, r.nombre as rol 
+                             FROM usuarios u
+                             INNER JOIN usuario_rol ur ON u.idUsuario = ur.idUsuario
+                             INNER JOIN roles r ON ur.idRol = r.idRol
+                             WHERE u.usuario = @user AND u.password = @pass AND u.activo = 1 AND ur.estado = 1";
             MySqlParameter[] p = {
                 new MySqlParameter("@user", MySqlDbType.VarChar) { Value = user },
                 new MySqlParameter("@pass", MySqlDbType.VarChar) { Value = password }
             };
             
-            DataTable dt = ExecuteQuery(query, p);
-            return dt.Rows.Count > 0 && Convert.ToInt32(dt.Rows[0][0]) > 0;
+            return ExecuteQuery(query, p);
         }
     }
 }

@@ -7,13 +7,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="~/assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/favicon_io/favicon-16x16.png" />
+    <link rel="shortcut icon" href="~/assets/favicon_io/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="~/assets/favicon_io/site.webmanifest" />
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
@@ -45,7 +49,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1" id="mainNav">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
                     </ul>
                 </div>
@@ -56,12 +60,53 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - ChocoArt System</p>
             </footer>
         </div>
     </form>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
+
+    <script>
+        $(document).ready(function () {
+            loadDynamicMenus();
+        });
+
+        function loadDynamicMenus() {
+            $.ajax({
+                url: '<%= ResolveUrl("~/Handlers/ProjectHandler.ashx") %>',
+                data: { cmd: 'getMenus' },
+                success: function (res) {
+                    if (res.status === 'success') {
+                        let html = '<li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Default.aspx") %>">Inicio</a></li>';
+                        
+                        // Separar padres e hijos
+                        const parents = res.data.filter(m => !m.id_padre);
+                        const children = res.data.filter(m => m.id_padre);
+
+                        parents.forEach(p => {
+                            const subMenus = children.filter(c => c.id_padre === p.id_menu);
+                            if (subMenus.length > 0) {
+                                html += `<li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="drop${p.id_menu}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="${p.icono}"></i> ${p.nombre}
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="drop${p.id_menu}">`;
+                                subMenus.forEach(s => {
+                                    html += `<li><a class="dropdown-item" href="${'<%= ResolveUrl("~/") %>' + s.url}">${s.nombre}</a></li>`;
+                                });
+                                html += `    </ul>
+                                         </li>`;
+                            } else {
+                                html += `<li class="nav-item"><a class="nav-link" href="${'<%= ResolveUrl("~/") %>' + p.url}"><i class="${p.icono}"></i> ${p.nombre}</a></li>`;
+                            }
+                        });
+                        $('#mainNav').html(html);
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

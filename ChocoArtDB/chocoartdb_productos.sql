@@ -31,10 +31,9 @@ CREATE TABLE `productos` (
   `imagen` varchar(300) DEFAULT NULL,
   `precio_costo` decimal(8,2) DEFAULT NULL,
   `precio_venta` decimal(8,2) DEFAULT NULL,
-  `existencia` int DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +42,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (29,'Chocobanana Clásica','Banano cubierto con chocolate oscuro','img/productos/chocobanana_clasica.png',4.50,8.00,119,'2026-03-20 09:00:00'),(30,'Fresa con Chocolate','Fresa fresca cubierta con chocolate semiamargo','img/productos/fresa_chocolate.png',3.25,6.50,86,'2026-03-20 09:10:00'),(31,'Manzana Decorada','Manzana con cobertura de chocolate y toppings','img/productos/manzana_decorada.png',6.00,11.00,60,'2026-03-20 09:20:00'),(32,'Brocheta Frutal','Brocheta de frutas variadas con chocolate','img/productos/brocheta_frutal.png',5.00,9.50,79,'2026-03-20 09:30:00'),(33,'Caja Premium 6 Unidades','Caja surtida de frutas con chocolate','img/productos/caja_premium_6.png',18.00,30.00,40,'2026-03-20 09:40:00'),(35,'ProductoNuevo','Producto prueba',NULL,30.00,40.00,20,'2026-03-27 21:32:51');
+INSERT INTO `productos` VALUES (1,'Chocobanana Clásica','Banano cubierto con chocolate oscuro',NULL,4.10,8.00,'2026-04-02 18:36:53'),(2,'Chocofresa Sensación','Fresa importada cubierta de chocolate oscuro',NULL,3.15,15.00,'2026-04-02 18:36:53'),(3,'Chocobanana Blanca y Maní','Banano con base de chocolate blanco y maní',NULL,6.20,15.00,'2026-04-02 18:36:53'),(4,'Bandeja Surtida Premium 6','Bandeja de regalo con 3 chocobananas y 3 chocofresas decoradas',NULL,25.25,65.00,'2026-04-02 18:36:53'),(5,'ProductoNuevo','asdad',NULL,0.28,12.00,'2026-04-17 22:31:46');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-27 22:34:53
+-- Dump completed on 2026-05-12 23:24:57

@@ -32,7 +32,7 @@ CREATE TABLE `usuarios` (
   `fechaCreacion` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `usuario` (`usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (4,'admin','admin123',_binary '','2026-03-21 07:00:00'),(5,'ventas1','ventas123',_binary '','2026-03-21 07:05:00'),(6,'inventario1','inventario123',_binary '','2026-03-21 07:10:00'),(7,'cajero1','cajero123',_binary '','2026-03-21 07:15:00'),(8,'supervisor12','',_binary '\0','2026-03-21 07:20:00'),(10,'Hola','hola123',_binary '','2026-03-27 21:36:00');
+INSERT INTO `usuarios` VALUES (1,'admin','admin',_binary '','2026-04-02 18:36:53'),(2,'ventas','1234',_binary '','2026-04-02 18:36:53');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-27 22:34:53
+-- Dump completed on 2026-05-12 23:24:57
